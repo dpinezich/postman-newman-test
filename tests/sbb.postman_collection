@@ -1,0 +1,84 @@
+{
+	"variables": [],
+	"info": {
+		"name": "sbb",
+		"_postman_id": "3e997dda-fb81-3bf5-6ce2-e7e5d8269c12",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"test status is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "https://data.sbb.ch/api/records/1.0/search/?dataset=city-timetable&q=Z%C3%BCrich&facet=namel",
+					"protocol": "https",
+					"host": [
+						"data",
+						"sbb",
+						"ch"
+					],
+					"path": [
+						"api",
+						"records",
+						"1.0",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "dataset",
+							"value": "city-timetable",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "q",
+							"value": "Z%C3%BCrich",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "facet",
+							"value": "namel",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "name of the branch",
+							"type": "text"
+						}
+					]
+				},
+				"description": "test"
+			},
+			"response": []
+		}
+	]
+}
